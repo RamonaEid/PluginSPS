@@ -12,3 +12,13 @@ function grasscrete_check_unsemantic() {
     }
 }
 
+function grasscrete_check_fontawesome() {
+    global $wp_styles;
+    $srcs = array_map('basename', (array) wp_list_pluck($wp_styles->registered, 'src') );
+    if ( in_array('awesome.min.css', $srcs) || in_array('awesome.css', $srcs) ) {
+        /* echo 'font-awesome registered */
+    } else {
+        wp_enqueue_style( 'font-awesome', plugins_url('css/font-awesome.min.css', dirname(__FILE__) ) );
+    }
+}
+
