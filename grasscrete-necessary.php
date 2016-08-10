@@ -59,6 +59,8 @@ function grasscrete_init() {
         );
         
         new WP_GitHub_Updater( $config );
+        
+    }
 
 }
 
