@@ -20,5 +20,14 @@ function grasscrete_check_fontawesome() {
     } else {
         wp_enqueue_style( 'font-awesome', plugins_url('css/font-awesome.min.css', dirname(__FILE__) ), array(), '081116' );
     }
+
+    function custom_upload_mimes ( $existing_mimes=array() ) {
+        // add your extension to the array
+        $existing_mimes['vcf'] = 'text/x-vcard';
+        return $existing_mimes;
+    }
+
+
+
 }
 

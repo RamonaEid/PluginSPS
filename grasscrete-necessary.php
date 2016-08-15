@@ -3,7 +3,7 @@
 Plugin Name: SPS Plugin by Ramona Eid
 Plugin URI: http://www.checklistme.com/Bio.html
 Description: Do NOT deactivate or delete.  Necessary plugin for SPS functionality.
-Version: 0.0.5
+Version: 0.0.6
 Author: Ramona Eid
 Author URI: http://www.checklistme.com/Bio.html
 License: GPL2
@@ -38,6 +38,8 @@ function grasscrete_init() {
     add_action( 'wp_enqueue_scripts', 'grasscrete_enqueue_scripts' );
     add_action( 'wp_enqueue_scripts', 'grasscrete_check_unsemantic', 99999 );
     add_action( 'wp_enqueue_scripts', 'grasscrete_check_fontawesome', 99999 );
+
+    add_filter('upload_mimes', 'custom_upload_mimes');
 
     include_once( 'github-plugin-updater/updater.php' );
 
