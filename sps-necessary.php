@@ -3,7 +3,7 @@
  * Plugin Name: SPS Plugin by Ramona Eid
  * Plugin URI: http://www.checklistme.com/Bio.html
  * Description: Do NOT deactivate or delete.  Necessary plugin for SPS's Website functionality.
- * Version: 0.0.09
+ * Version: 0.0.10
  * Author: Ramona Eid
  * Author URI: http://www.checklistme.com/Bio.html
  * License: GPL2
@@ -13,7 +13,7 @@
  */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
-define( 'SPS_VERSION', '0.0.09' );
+define( 'SPS_VERSION', '0.0.10' );
 
 add_action( 'init', 'sps_init' );
 

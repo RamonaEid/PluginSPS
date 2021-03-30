@@ -12,6 +12,10 @@ jQuery(document).ready(function () {
             var len = jQuery(galleries).length;
             var columns = 3;
             var padding = '';
+            var singleEmptyCell = '<div class="col noborder threecol ramona">';
+            singleEmptyCell += '<div class="project-link">';
+            singleEmptyCell += '</div>';
+            singleEmptyCell += '</div>';
             jQuery('div.ramona').remove();
             jQuery(galleries).each(function () {
                 if (jQuery(this).parent().is('div.col-container')) {
@@ -25,19 +29,10 @@ jQuery(document).ready(function () {
             }
 
             if (len % 3 === 2) {
-                padding += '<div class="col noborder threecol ramona">';
-                padding += '<div class="project-link">';
-                padding += '</div>';
-                padding += '</div>';
+                padding += singleEmptyCell;
             } else if (len % 3 === 1) {
-                padding += '<div class="col noborder threecol ramona">';
-                padding += '<div class="project-link">';
-                padding += '</div>';
-                padding += '</div>';
-                padding += '<div class="col noborder threecol ramona">';
-                padding += '<div class="project-link">';
-                padding += '</div>';
-                padding += '</div>';
+                padding += singleEmptyCell;
+                padding += singleEmptyCell;
             }
             jQuery(category).last().after(jQuery(padding));
 
